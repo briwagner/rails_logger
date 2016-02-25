@@ -1,0 +1,25 @@
+<div class="text-center">
+
+  <h1><%= @employer.name %></h1>
+
+  <h4><%= flash[:notice] if flash[:notice] %></h4>
+
+  <% if @task.errors.any? %>
+    <% @task.errors.full_messages.each do |msg| %>
+      <p><em><%= msg %></em></p>
+    <% end %>
+  <% end %>
+
+  <%=  render 'tasks/form_in' %>
+
+  <div class="margin-15">
+    <button id='show-button' class="btn">Completed Job</button>
+  </div>
+
+  <div class="not-visible top-border">
+    <%= render 'tasks/form_done' %>
+  </div>
+
+  <%= render 'tasks/task_list' %>
+
+</div>

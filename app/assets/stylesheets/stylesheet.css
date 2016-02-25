@@ -1,0 +1,211 @@
+/* nav section */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  color: orange;
+}
+
+nav {
+  height: 60px;
+  background-color: antiquewhite;
+  margin-bottom: 4px solid orange;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+a, a:hover, a:visited, a:active {
+  color: orange;
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.reverse-color {
+  color:white;
+  background-color: orange;
+}
+
+.radio-text {
+  font-size: 1em;
+  padding: 0 15px 0 10px;
+  height: 1.9em;
+}
+
+.links {
+  height: 60px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.list-block {
+  background-color: navy;
+  border-right: 5px solid blue;
+  text-decoration: none;
+  color: white;
+  font-size: 1.6em;
+  line-height: 2em;
+  padding: 18px 15px;
+}
+
+.list-block:last-child {
+  border: none;
+}
+
+/* main body */
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.boss-block {
+  display: inline-block;
+  height: 240px;
+  width: 240px;
+  background-color: orange;
+  text-align: center;
+  margin-bottom: 3px;
+  color:white;
+  overflow:hidden;
+}
+
+.boss-tiles a {
+  text-decoration: none;
+}
+
+.boss-title {
+  padding-top: 30px;
+  font-size: 2.5em;
+}
+
+.boss-rate {
+  font-size: 1.2em;
+}
+
+/* manage page*/
+.block-inline {
+  display:inline-block;
+}
+
+.half-wide {
+  width: 49.5%;
+  margin: 0;
+}
+
+.bkg-antique {
+  background-color: antiquewhite;
+}
+
+.btn {
+  padding:10px;
+  background-color: orange;
+  border-radius: 10px;
+  border:none;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.btn:hover, .btn:visited, .btn:active {
+  color:white;
+}
+
+.btn-reverse {
+  background-color: white;
+  color: orange;
+}
+
+.btn-reverse:hover {
+  color:orange;
+}
+
+.boss-edit p {
+  padding-left: 15px;
+}
+
+.floater {
+  position: absolute;
+  top:100px;
+  left:5%;
+  height: 70%;
+  width:90%;
+  border-radius: 15px;
+  background-color: orange;
+  display:none;
+  color:white;
+}
+
+.floater input, .form-block input, .form-block {
+  display:block;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  font-size: 1.3em;
+}
+
+.pad-em {
+  padding:1em 0;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.margin-15 {
+  margin: 15px 0;
+  display: block;
+}
+
+.not-visible {
+  display:none;
+}
+
+.visible {
+  display: block;
+}
+
+.top-border {
+  border-top: 2px solid orange;
+  padding-top: 10px;
+}
+
+.task-done {
+  color: orange;
+}
+
+.task-undone {
+  color: red;
+}
+
+.no-link {
+  text-decoration: none;
+}
+
+/*footer*/
+
+.footer {
+  padding: 15px 0;
+  border-top: 1px solid orange;
+}
+
+@media screen and (max-width: 500px) {
+  .content {
+    width: 98%;
+  }
+
+}

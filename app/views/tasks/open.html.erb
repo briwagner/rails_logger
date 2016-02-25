@@ -1,0 +1,8 @@
+<div class="text-center">
+  <h2>Open jobs</h2>
+
+  <% @open_tasks.each do |task| %>
+    <p><a href="/tasks/<%= task.id %>"><%= task.description %> | <%= task.time_in.strftime("%b. %e") %></a></p>
+  <% end %>
+
+</div>

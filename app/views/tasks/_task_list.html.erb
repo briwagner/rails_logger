@@ -1,0 +1,13 @@
+<div class="text-center top-border">
+  <h2>Jobs</h2>
+  <% if @employer.tasks.count > 0 %>
+    <% @employer.tasks.each_with_index do |task, i| %>
+      <div >
+        <p class="pad-em margin-0 <%= 'bkg-antique' if i.even? %>"><a href="<%= task_path(task) %>"><%= task.description if task.description %> - <%= task.time_in.strftime("%b. %d") %> |
+          <span class="<%= task.is_completed ? 'task-done' : 'task-undone' %>"><%= task.duration.to_i %> m</span></a></p>
+      </div>
+    <% end %>
+  <% else %>
+  <p>No jobs yet</p>
+  <% end %>
+</div>

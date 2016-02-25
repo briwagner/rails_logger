@@ -1,0 +1,26 @@
+<h2 class="text-center">All your Employers</h2>
+
+<p class="text-center reverse-color"><em><%= flash[:notice] if flash[:notice] %></em></p>
+<p class='text-center'><a href="/tasks/open"><%= "You have #{@open_tasks.count} open jobs" if @open_tasks.count > 0 %></a></p>
+
+<div class="boss-tiles">
+
+  <% @employers.each do |emp| %>
+  <a href="/employers/<%= emp.id %>">
+    <div class="boss-block">
+      <h3 class="boss-title"><%= emp.name %></h3>
+      <h4 class="boss-rate"><%= emp.rate ? number_to_currency(emp.rate, precision: 0) : raw('<em>No rate set</em>') %></h4>
+    </div>
+  </a>
+  <% end %>
+
+  <a href="/employers/new">
+    <div class="boss-block">
+      <h3 class="boss-title">Add new</h3>
+      <h4 class='boss-rate'>+</h4>
+    </div>
+  </a>
+
+</div>
+
+

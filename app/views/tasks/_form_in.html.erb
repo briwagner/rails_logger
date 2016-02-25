@@ -1,0 +1,9 @@
+<div class="text-center">
+  <%= form_for @task, html: {class: "form-block"} do |f| %>
+    <%= f.text_field :description, placeholder: 'Task' %>
+    <%= f.label :time_in, 'Clock in', class: 'margin-15' %>
+    <span class="margin-15"><%= f.datetime_select :time_in, {}, class: 'radio-text' %></span>
+    <%= f.number_field :employer_id, type: "hidden", value: @employer.id %>
+    <%= submit_tag "Clock in", class: 'btn margin-15' %>
+  <% end %>
+</div>

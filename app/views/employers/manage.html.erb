@@ -1,0 +1,24 @@
+<h1 class="text-center">Manage Employers</h1>
+
+<% @employers.each_with_index do |emp, i| %>
+  <div class="boss-edit <%= 'bkg-antique' if i.even? %>" data-elemId="<%= emp.id %>">
+
+    <div class="block-inline half-wide">
+      <p class="text-right"><span data-target="name"><%= emp.name %></span> (<span data-target="rate"><%= emp.rate ? number_to_currency(emp.rate, precision: 0) : number_to_currency(0, precision: 0) %></span>)</p>
+    </div>
+    <form class="block-inline name-edit">
+      <button class="btn btn-edit" data-method="edit">Edit</button>
+      <button class="btn btn-edit" data-method="delete" data-deleteId="<%= emp.id %>">X</button>
+    </form>
+
+  </div>
+<% end %>
+
+<div class="floater text-center">
+  <h3>Make Your Edits</h3>
+  <form class='edit-form' method="post">
+    <input type="hidden" name="_method" value="patch" />
+    <input type="submit" value="Edit" class="btn btn-reverse complete-edit persist" />
+    <button class='escape btn btn-reverse'>Close</button>
+  </form>
+</div>

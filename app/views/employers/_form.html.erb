@@ -1,0 +1,7 @@
+<div class="text-center">
+  <%= form_for @employer, html: {class: "form-block"}  do |f| %>
+    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.number_field :rate, placeholder: "Rate" %>
+    <%= submit_tag "New", class: 'btn' %>
+  <% end %>
+</div>

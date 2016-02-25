@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TimeLogger</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav>
+    <div class='links'>
+        <%= link_to 'Bosses', employers_path, class: 'list-block' %><%= link_to 'Add Boss', employers_new_path, class: 'list-block' %><%= link_to 'Logsheet', tasks_path, class: 'list-block' %><%= link_to 'Work', new_task_path, class: 'list-block' %><a href="/employers/manage" class='list-block'>Manage</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <%= yield %>
+  </div>
+
+  <div class="footer">
+    <p class="text-center">Copyright 2016</p>
+  </div>
+
+</body>
+</html>
