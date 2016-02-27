@@ -220,5 +220,8 @@ a, a:hover, a:visited, a:active {
   .content {
     width: 98%;
   }
+  .boss-tiles {
+    text-align: center;
+  }
 
 }
