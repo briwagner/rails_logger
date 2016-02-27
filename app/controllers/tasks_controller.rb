@@ -16,9 +16,11 @@ class TasksController < ActionController::Base
     @task.update_attributes(params[:task].permit(:description, :time_in, :time_out))
     if @task.save
       flash[:notice] = "Task updated"
-      redirect_to task_path(@task)
+      # redirect_to task_path(@task)
+      redirect_to employer_show_path(@task.employer)
     else
-      'failed'
+      flash[:notice] = "Failed to save"
+      redirect_to task_path(@task)
     end
 
   end

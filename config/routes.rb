@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get 'employers/new' => 'employers#new'
     post 'employers' => 'employers#create'
     get 'employers/manage' => 'employers#manage', as: 'manage'
-    get 'employers/:id' => 'employers#show'
+    get 'employers/:id' => 'employers#show', as: 'employer_show'
     patch 'employers/:id' => 'employers#update'
     delete 'employers/:id' => 'employers#delete'
 
