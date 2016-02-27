@@ -7,6 +7,11 @@ body {
   color: orange;
 }
 
+.big-border {
+  border-top: 5px solid orange;
+  border-bottom: 5px solid orange;
+}
+
 nav {
   height: 60px;
   background-color: antiquewhite;
@@ -133,6 +138,14 @@ a, a:hover, a:visited, a:active {
 
 .btn-reverse:hover {
   color:orange;
+}
+
+.btn-wide {
+  margin: 0 auto;
+  width: 95%;
+  font-size: 135%;
+  display: block;
+  margin-bottom: 25px;
 }
 
 .boss-edit p {

@@ -7,19 +7,21 @@
   <%= csrf_meta_tags %>
   <meta name=viewport content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body class='big-border'>
 
-  <nav>
+<!--   <nav>
     <div class='links'>
-        <%= link_to 'Bosses', employers_path, class: 'list-block' %><%= link_to 'Add Boss', employers_new_path, class: 'list-block' %><%= link_to 'Logsheet', tasks_path, class: 'list-block' %><%= link_to 'Work', new_task_path, class: 'list-block' %><a href="/employers/manage" class='list-block'>Manage</a>
+        <%= link_to 'Bosses', employers_path, class: 'list-block' %><%= link_to 'Manage', manage_path, class: 'list-block' %>
     </div>
-  </nav>
+  </nav> -->
 
   <div class="content">
     <%= yield %>
   </div>
 
-  <div class="footer">
+  <div class="footer text-center">
+    <%= link_to "Bosses", employers_path, class: 'btn btn-wide' %>
+    <%= link_to "Manage", manage_path, class: 'btn btn-wide' %>
     <p class="text-center">Copyright 2016</p>
   </div>
 
