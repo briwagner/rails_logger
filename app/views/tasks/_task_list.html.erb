@@ -17,10 +17,11 @@
     <% end %>
     <div class="full-wide top-border">
       <div class="half-wide block-inline text-right">
-        <p class="pad-em margin-0"><strong>Total hours: <%= wages = @employer.tasks.inject(0) {|sum, hash| sum + hash.raw_duration} / 3600 %> hrs |</p>
+        <% gross_hours = @employer.tasks.inject(0) {|sum, hash| sum + hash.raw_duration} / 3600 %>
+        <p class="pad-em margin-0"><strong>Wages: <%= number_to_currency(gross_hours * @employer.rate, precision: 2) %> |</strong></p>
       </div>
       <div class="half-wide block-inline text-left">
-        <p>Wages: <%= number_to_currency(wages * @employer.rate, precision: 2) %><%=  %></strong></p>
+        <p><strong>Total hours: <%= gross_hours.round(2) %> hrs</strong></p>
       </div>
     </div>
   <% else %>

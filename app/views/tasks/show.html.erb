@@ -3,8 +3,8 @@
   <h2><%= @task.description %></h2>
   <p>Time in: <%= @task.time_in.strftime("%I:%M %p | %b. %d") %></p>
   <p>Time out: <%= @task.time_out ? @task.time_out.strftime("%I:%M %p | %b. %d") : "Open" %></p>
-  <% if @task.time_out %>
-    <p>Duration: <%= @task.duration.to_i %> minutes</p>
+  <% if @task.is_completed %>
+    <p>Duration: <%= @task.duration[:hours] %>h <%= @task.duration[:minutes] %>m</p>
   <% end %>
 
   <h4><a href="/employers/<%= @task.employer.id %>" class='btn no-link'><%= @task.employer.name %></a></h4>
