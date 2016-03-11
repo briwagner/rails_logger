@@ -2,12 +2,29 @@
   <h2>Jobs</h2>
   <% if @employer.tasks.count > 0 %>
     <% @employer.tasks.each_with_index do |task, i| %>
-      <div >
-        <p class="pad-em margin-0 <%= 'bkg-antique' if i.even? %>"><a href="<%= task_path(task) %>"><%= task.description if task.description %> - <%= task.time_in.strftime("%b. %d") %> |
-          <span class="<%= task.is_completed ? 'task-done' : 'task-undone' %>"><%= task.is_completed ? "#{task.duration.to_i} m" : 'Open' %></span></a></p>
+
+      <div class="full-wide <%= 'bkg-antique' if i.even? %>">
+        <a href="<%= task_path(task) %>">
+          <div class="half-wide block-inline text-right">
+            <p class="pad-em margin-0"><%= task.description if task.description %> - <%= task.time_in.strftime("%b. %d") %> |</p>
+          </div>
+          <div class="half-wide block-inline text-left">
+            <p><span class="<%= task.is_completed ? 'task-done' : 'task-undone' %>"><%= task.is_completed ? "Duration: #{task.duration[:hours] if task.duration.has_key?(:hours)}h #{task.duration[:minutes]}m" : 'Open' %></span></p>
+          </div>
+        </a>
       </div>
+
     <% end %>
+    <div class="full-wide top-border">
+      <div class="half-wide block-inline text-right">
+        <% gross_hours = @employer.tasks.inject(0) {|sum, hash| sum + hash.raw_duration} / 3600 %>
+        <p class="pad-em margin-0"><strong>Wages: <%= number_to_currency(gross_hours * @employer.rate, precision: 2) %> |</strong></p>
+      </div>
+      <div class="half-wide block-inline text-left">
+        <p><strong>Total hours: <%= gross_hours.round(2) %> hrs</strong></p>
+      </div>
+    </div>
   <% else %>
-  <p>No jobs yet</p>
+    <p>No jobs yet</p>
   <% end %>
 </div>
