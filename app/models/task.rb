@@ -7,6 +7,8 @@ class Task < ActiveRecord::Base
   def raw_duration
     if time_out
       time_out - time_in
+    else
+      0
     end
   end
 
@@ -23,7 +25,7 @@ class Task < ActiveRecord::Base
   end
 
   def minutes_hours(total_min)
-    if total_min > 90
+    if total_min >= 60
       {hours: (total_min / 60).to_i, minutes: (total_min % 60).to_i}
     else
       {hours: 0, minutes: total_min.to_i}
