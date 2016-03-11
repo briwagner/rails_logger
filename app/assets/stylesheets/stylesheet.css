@@ -27,6 +27,11 @@ a, a:hover, a:visited, a:active {
   text-decoration: none;
 }
 
+.text-left {
+  text-align: left;
+  padding:5px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -108,9 +113,14 @@ a, a:hover, a:visited, a:active {
   display:inline-block;
 }
 
+.full-wide {
+  width: 100%;
+}
+
 .half-wide {
-  width: 49.5%;
+  width: 49%;
   margin: 0;
+  padding: 0;
 }
 
 .bkg-antique {
